@@ -1,10 +1,14 @@
 db:
-  image: orchardup/postgresql
+  build: db
   ports:
     - 5432:5432
+  environment:
+    - HATCH_DB_USER
+    - HATCH_DB_PASSWORD
+    - HATCH_DB_NAME
 
-web:
-  build: .
+api:
+  build: api
   command: python runserver.py -h 0.0.0.0 -p 5000
   volumes:
     - .:/code
@@ -12,3 +16,12 @@ web:
     - 5000:5000
   links:
     - db
+  environment: # vars w/ only a key are resolved from host machine
+    - HATCH_DB_USER
+    - HATCH_DB_PASSWORD
+    - HATCH_DB_NAME
+    - CONSUMER_KEY
+    - CONSUMER_SECRET
+    - ACCESS_TOKEN=PLACEHOLDER
+    - ACCESS_TOKEN_SECRET=PLACEHOLDER
+    - APP_SECRET=PLACEHOLDER
