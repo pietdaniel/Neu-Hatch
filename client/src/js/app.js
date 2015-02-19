@@ -2,7 +2,7 @@ App = Ember.Application.create();
 
 
 var search = function(query) {
-  var url = "http://localhost:5000/search?q=" + query;
+  var url = "http://flask-api:5000/search?q=" + query;
   return $.getJSON(url, function(data) {
     return data;
   });
