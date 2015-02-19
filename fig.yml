@@ -7,16 +7,17 @@ db:
     - HATCH_DB_PASSWORD
     - HATCH_DB_NAME
 
-api:
-  build: api
+server:
+  build: server
   command: python runserver.py -h 0.0.0.0 -p 5000
   volumes:
-    - .:/code
+    - server/:/code
   ports:
     - 5000:5000
   links:
     - db
   environment: # vars w/ only a key are resolved from host machine
+    - DEBUG=True
     - HATCH_DB_USER
     - HATCH_DB_PASSWORD
     - HATCH_DB_NAME
@@ -25,3 +26,12 @@ api:
     - ACCESS_TOKEN=PLACEHOLDER
     - ACCESS_TOKEN_SECRET=PLACEHOLDER
     - APP_SECRET=PLACEHOLDER
+
+client:
+  build: client
+  volumes:
+    - client/src/:/usr/share/nginx/html
+  links:
+    - server:flask-api
+  ports:
+    - 8000:80
