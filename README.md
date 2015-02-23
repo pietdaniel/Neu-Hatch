@@ -13,7 +13,7 @@
 - spleensauce: front end, test automation
 - pietdaniel: back end, deploys
 - ali: front end, back end, CI
-- isaac: \<place claim here\>
+- isaac: ops, back end, security
 
 ## Requirements:
 - TODO

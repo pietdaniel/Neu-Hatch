@@ -5,3 +5,4 @@ server/ENVVAR
 *.pyc
 server/migrations
 server/migrations/*
+ENVVAR
