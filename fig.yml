@@ -27,11 +27,11 @@ server:
     - ACCESS_TOKEN_SECRET=PLACEHOLDER
     - APP_SECRET=PLACEHOLDER
 
-client:
-  build: client
-  volumes:
-    - client/src/:/usr/share/nginx/html
-  links:
-    - server:flask-api
-  ports:
-    - 8000:80
+#client:
+#  build: client
+#  volumes:
+#    - client/src/:/usr/share/nginx/html
+#  links:
+#    - server:flask-api
+#  ports:
+#    - 8000:80
