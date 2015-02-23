@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM debian:wheezy
 MAINTAINER Isaac Boehman <idboehman@gmail.com>
 
 RUN apt-get update && apt-get install -y \
@@ -15,9 +15,7 @@ RUN apt-get update && apt-get install -y \
     socat \
     software-properties-common
 
-RUN mkdir /code
-ADD . /code
-WORKDIR /code
-RUN pip install -r requirements.txt
+ADD requirements.txt /tmp/requirements.txt
+RUN pip install -r /tmp/requirements.txt
 
 EXPOSE 5000
