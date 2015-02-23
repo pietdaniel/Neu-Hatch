@@ -4,3 +4,4 @@ server/ENVVAR
 ./server/neuhatch/__pycache__
 *.pyc
 ENVVAR
+fig.yml
