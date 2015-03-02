@@ -31,7 +31,7 @@ def make_json_app(import_name, **kwargs):
 config = get_default_config()
 app = make_json_app(__name__)
 app.secret_key = config.app_secret
-app.config["SQLALCHEMY_DATABASE_URI"] = config.database_url
+app.config["SQLALCHEMY_DATABASE_URI"] = config.database_uri
 db = SQLAlchemy(app)
 
 login_manager = LoginManager()

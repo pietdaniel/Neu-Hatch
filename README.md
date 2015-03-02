@@ -108,12 +108,15 @@ Call this file ```ENVVAR``` and place it in ```server/```
 Its format is as follows:
 
 ```
-export consumer_key="PLACEHOLDER"
-export consumer_secret="PLACEHOLDER"
-export access_token="PLACEHOLDER"
-export access_token_secret="PLACEHOLDER"
-export app_secret="PLACEHOLDER"
-export database_url="postgres://localhost/neuhatch"
+export CONSUMER_KEY="PLACEHOLDER"
+export CONSUMER_SECRET="PLACEHOLDER"
+export ACCESS_TOKEN="PLACEHOLDER"
+export ACCESS_TOKEN_SECRET="PLACEHOLDER"
+export APP_SECRET="PLACEHOLDER"
+export HATCH_DB_NAME="neuhatch"
+export HATCH_DB_USER="hatch"
+export HATCH_DB_PASSWORD="..."
+export HATCH_API_URL="get from isaac"
 ```
 
 Then run:
