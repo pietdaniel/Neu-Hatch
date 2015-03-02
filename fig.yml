@@ -3,13 +3,13 @@ db:
   ports:
     - 5432:5432
   volumes_from:
-    - dbData
+    - dbdata
   environment:
     - HATCH_DB_USER
     - HATCH_DB_PASSWORD
     - HATCH_DB_NAME
 
-dbData:
+dbdata:
   image: "postgres:9.4"
   command: /bin/echo Data container for db
 
