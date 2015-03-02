@@ -1,7 +1,5 @@
 db:
   build: db
-  ports:
-    - 5432:5432
   volumes_from:
     - dbdata
   environment:
