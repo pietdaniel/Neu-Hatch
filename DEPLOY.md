@@ -15,4 +15,4 @@ the specific details.
 
 * Push your changes to github and run:
 
-`fa
+`fab deploy`
